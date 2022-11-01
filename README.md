@@ -18,3 +18,4 @@ _WIP: Will attempt to add ARM/Bicep scripts for resources eventually_
 
 ## Steps to Create
 1) Set up pre-requisites (link coming soon)
+2) [Set up ingestion in Azure Data Explorer](/docs/ADXIngest.md)
