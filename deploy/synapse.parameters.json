@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "synapseWorkspaceName": {
+      "value": "dev-syn-adx-lamda-syn"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "storageAccountName": {
+      "value": "devsynadxlamda20221116"
+    },
+    "storageAccountContainerName": {
+      "value": "synapse"
+    },
+    "sqlAdministratorLogin": {
+      "value": "sqladminuser"
+    },
+    "synapseWorkspaceNameMRG": {
+      "value": "devadxlamda06-mrg"
+    },
+    "sparkPoolName": {
+      "value": "synSparkSmall"
+    },
+    "adxPoolName": {
+      "value": "adxPoolXS"
+    },
+    "eventHubNamespaceName": {
+      "value": "devsynadxlamdaeh"
+    },
+    "keyVaultName":{
+      "value": "devsynadxlamdakv"
+    }
+  }
+}
