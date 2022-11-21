@@ -18,8 +18,8 @@ This project is meant to demonstrate how Azure Data Explorer (ADX) can be used t
 2) [Deploy resources to Resource Group](./docs/deploy.md)
 3) Grant permissions to allow services to work together.
    1) [Synapse Linked Service to Key Vault](./docs/linkedServices.md)
-   2) Add Event Hub Connection String to Key Vault
-   3) Give Synapse permission to Storage Account
+   2) [Add Event Hub Connection String to Key Vault](./docs/eventHubConnStringKV.md)
+   3) [Give Synapse permission to Storage Account](./docs/)
 4) Set up and test Spark data generator.
 5) Set up and test Data Explorer ingestion.
 6) Set up and test Data Explorer continuous partitioned export.
