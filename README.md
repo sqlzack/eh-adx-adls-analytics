@@ -20,6 +20,6 @@ This project is meant to demonstrate how Azure Data Explorer (ADX) can be used t
    1) [Synapse Linked Service to Key Vault](./docs/linkedServices.md)
    2) [Add Event Hub Connection String to Key Vault](./docs/eventHubConnStringKV.md)
    3) [Give Synapse permission to Storage Account](./docs/storageAccountPermission.md)
-4) Set up and test Spark data generator.
+4) [Set up and test Python Event Sender](./docs/eventSender.md)
 5) Set up and test Data Explorer ingestion.
 6) Set up and test Data Explorer continuous partitioned export.
