@@ -1,0 +1,36 @@
+//Create a table that will hold cleaned data with strong data types
+.create table faredata_clean ( 
+medallion:int
+,hack_license:int
+,vendor_id:string
+,pickup_datetime:datetime
+,payment_type:string
+,fare_amount:decimal
+,surcharge:decimal
+,mta_tax:decimal
+,tip_amount:decimal
+,tolls_amount:decimal
+,total_amount:decimal
+)
+
+//Create a function that will ensure fields are converted to the proper data type
+.create-or-alter function with (docstring = 'Strongly type the data flowing through the raw table.', folder='EventParsing')
+cleanFareData()
+{
+faredata_raw
+| project   medallion 			= toint(medallion)
+            ,hack_license 		= toint(hack_license)
+            ,vendor_id 			= tostring(vendor_id)
+            ,pickup_datetime 	= todatetime(pickup_datetime)
+            ,payment_type 		= tostring(payment_type)
+            ,fare_amount 		= todecimal(fare_amount)
+            ,surcharge 			= todecimal(surcharge)
+            ,mta_tax 			= todecimal(mta_tax)
+            ,tip_amount			= todecimal(tip_amount)
+            ,tolls_amount 		= todecimal(tolls_amount)
+            ,total_amount 		= todecimal(total_amount)
+}
+
+//Create a policy that will move the data into the faredata_clean table as it is being loaded into faredata_raw
+.alter table faredata_clean policy update 
+@'[{ "IsEnabled": true, "Source": "faredata_raw", "Query": "cleanFareData()", "IsTransactional": false, "PropagateIngestionProperties": false}]'

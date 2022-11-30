@@ -1,0 +1,54 @@
+// Check database policy for Managed Identity
+.show database nyctaxi policy managed_identity
+| mv-expand d = todynamic(Policy)
+| project d["ObjectId"],
+          d["DisplayName"],
+          d["AllowedUsages"]
+
+// Alter databse policy to allow usage of Managed Identity to connect to External Tables
+.alter database nyctaxi policy managed_identity ```
+[ 
+    { 
+        "ObjectId": "Paste ObjectId from previous query here", 
+        "AllowedUsages": "DataConnection, ExternalTable" 
+    } 
+]
+```
+
+// Create an external table to hold data in partitioned Parquet files on ADLS Gen 2
+.create external table external_faredata 
+(
+medallion:int
+,hack_license:int
+,vendor_id:string
+,pickup_datetime:datetime
+,payment_type:string
+,fare_amount:decimal
+,surcharge:decimal
+,mta_tax:decimal
+,tip_amount:decimal
+,tolls_amount:decimal
+,total_amount:decimal
+) 
+kind=storage 
+partition by (Month:datetime = startofmonth(pickup_datetime)) 
+pathformat = (datetime_pattern("'year='yyyy'/month='MM", Month)) 
+dataformat=parquet 
+( 
+   h@'abfss://synapse@<add-storage-account-name-here>.dfs.core.windows.net/adxExport/external_faredata;managed_identity=system' 
+) 
+
+// Create an export that produces parquet files containing events every 10 minutes
+.create-or-alter continuous-export export_faredata_clean
+over (faredata_clean)
+to table external_faredata
+with
+(intervalBetweenRuns=10m)
+<| faredata_clean
+
+// You can use this to review the continuous export just created in the previous step.
+.show continuous-exports 
+
+// This will show any export failures as your exports are running
+.show continuous-export export_faredata_clean failures
+| project Details
