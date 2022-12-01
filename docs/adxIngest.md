@@ -1,6 +1,6 @@
 ## Ingest data into 
 ### Summary
-This walkthrough is to demonstrate how to set up ingestion into an Azure Data Explorer database and table from blob storage.
+This walkthrough is to demonstrate how to set up ingestion into an Azure Data Explorer database and table from Azure Event Hubs.
 
 ### Steps
 #### __Set up Ingestion__
