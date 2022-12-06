@@ -1,4 +1,4 @@
-## Ingest data into 
+## Ingest data into Azure Data Explorer
 ### Summary
 This walkthrough is to demonstrate how to set up ingestion into an Azure Data Explorer database and table from Azure Event Hubs.
 

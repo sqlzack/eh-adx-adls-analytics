@@ -1,4 +1,4 @@
-## Ingest data into 
+## Export Data from ADX to Azure Data Lake
 ### Summary
 This walkthrough is to demonstrate how to set up a continuous export from a Azure Data Explorer table to a partitioned Parquet table in Azure Data Lake.
 
