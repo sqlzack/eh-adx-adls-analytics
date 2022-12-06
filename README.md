@@ -22,4 +22,4 @@ This project is meant to demonstrate how Azure Data Explorer (ADX) can be used t
    3) [Give Synapse permission to Storage Account](./docs/storageAccountPermission.md)
 4) [Set up and test Python Event Sender](./docs/eventSender.md)
 5) [Set up and test Data Explorer ingestion.](./docs/adxIngest.md)
-6) Set up and test Data Explorer continuous partitioned export.
+6) [Set up and test Data Explorer continuous partitioned export.](./docs/adxExport.md)

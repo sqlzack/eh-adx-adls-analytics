@@ -14,4 +14,16 @@ This walkthrough is to demonstrate how to set up a continuous export from a Azur
 
 #### __Run Large Files to create partitioned Parquet tables__
 1) Download the 2013 NYC Taxi files named trip_fare_number.zip from the [University of Illinois Box Account](https://uofi.app.box.com/v/NYCtaxidata/folder/2332219935).
-2) Unzip the files and upload the raw CSVs contained in them to the raw/faredata
+2) Unzip the files and upload the raw CSVs contained in them to the raw/faredata. There are 3 possible paths to upload these CSVs.
+   
+   1) Use the path for uploading outlined in the [Event Sender](./eventSender.md) guide. (Upload Sample Data section). This method can be slower than the alternatives.
+   2) Download and install the [Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/#overview) tool and login with your Azure credentials to upload. This is fast and has a GUI to simplify uploading.
+   3) Configure and use [azcopy](https://learn.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy-copy). This will take more legwork but can be used in a repeatable fashion.
+
+3) Now you can trigger the pipeline as referenced in the [Event Sender](./eventSender.md) example or you can just re-run the pipeline with the same parameters as referenced in the [ADX Ingestion](adxIngest.md) step. 
+   
+
+#### __Final Information__
+This will take nearly 24 hours and you should wind up with files in your synapse storage container under the adxExport/external_faredata/year=yyyy/month=mm directory (example below). Since these files are partitioned they should be performant when querying or transforming downstream.
+
+![](../images/adxExport02.png)
