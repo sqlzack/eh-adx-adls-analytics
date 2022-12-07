@@ -35,7 +35,7 @@ partition by (Month:datetime = startofmonth(pickup_datetime))
 pathformat = (datetime_pattern("'year='yyyy'/month='MM", Month)) 
 dataformat=parquet 
 ( 
-   h@'abfss://synapse@<add-storage-account-name-here>.dfs.core.windows.net/adxExport/external_faredata;managed_identity=system' 
+   h@'abfss://<add-container-name-here>@<add-storage-account-name-here>.dfs.core.windows.net/adxExport/external_faredata;managed_identity=system' 
 ) 
 
 // Create an export that produces parquet files containing events every 10 minutes

@@ -10,7 +10,7 @@ This walkthrough is to demonstrate how to set up a continuous export from a Azur
 
 2) Run each command against the nyctaxi database individually. Learn about the [stored function](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/create-function) and [update policy](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/updatepolicy) being applied.
 3) Repeat the process detailed in Step #1 to import the [02 - externalTableCreate](../code/kusto/02%20-%20externalTableCreate.kql) script.
-4) Run each command in this script individually while learning about the [Managed Identity policy](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/managed-identity-policy), [External tables](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/schema-entities/externaltables), and [Continuous data export](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/data-export/continuous-data-export).
+4) Run each command in this script individually while learning about the [Managed Identity policy](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/managed-identity-policy), [External tables](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/schema-entities/externaltables), and [Continuous data export](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/data-export/continuous-data-export). Make sure to external table creation portion with your storage account and container names.
 
 #### __Run Large Files to create partitioned Parquet tables__
 1) Download the 2013 NYC Taxi files named trip_fare_number.zip from the [University of Illinois Box Account](https://uofi.app.box.com/v/NYCtaxidata/folder/2332219935).
@@ -24,6 +24,6 @@ This walkthrough is to demonstrate how to set up a continuous export from a Azur
    
 
 #### __Final Information__
-This will take nearly 24 hours and you should wind up with files in your synapse storage container under the adxExport/external_faredata/year=yyyy/month=mm directory (example below). Since these files are partitioned they should be performant when querying or transforming downstream.
+This will take nearly 24 hours and you should wind up with files in your storage container under the adxExport/external_faredata/year=yyyy/month=mm directory (example below). Since these files are partitioned they should be performant when querying or transforming downstream.
 
 ![](../images/adxExport02.png)

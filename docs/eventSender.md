@@ -33,7 +33,7 @@ Use VS Code to deploy resources to sandbox Resource Group.
     ![](../images/eventSender05.png)
 
 #### Upload Sample Data
-1) Go to the Data tab in Synapse Studios and Select the Linked storage for your workspace Storage Account. Open the Synapse Container.
+1) Go to the Data tab in Synapse Studios and Select the Linked storage for your workspace Storage Account. Open the container created with your storage account (in the screenshot it's called "synapse").
 
     ![](../images/eventSender06.png)
 
@@ -57,7 +57,7 @@ Use VS Code to deploy resources to sandbox Resource Group.
 Parameter | Value
 -----------|----------
 storageAccountName | Open the Azure Data Lake Linked Service. Examine the url and take the portion between "https://" and "dfs"
-storageAccountContainer | The value for this parameter is synapse
+storageAccountContainer | The value for this parameter is whatever you defined as your container name in deployment. In my example screenshots, the value was "synapse". _(Quotes were for illustration. Do not include quotes in the parameters.)_
 storageAccountDirectory | The value for this parameter is raw/faredata which is the directory we created earlier.
 storageAccountLinkedServiceName | This will be the name of the Linked Service you opened to get the storageAccountName parameter. Will be postfixed by WorkspaceDefaultStorage
 keyVaultName |  Open the Azure Key Vault Linked Service. Examine the url and copy the portion between "https://" and "vault"

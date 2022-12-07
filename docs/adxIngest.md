@@ -14,7 +14,7 @@ This walkthrough is to demonstrate how to set up ingestion into an Azure Data Ex
 
 3) In the Azure Data Explorer studio, right click the database associated with your Synapse Workspace called nyctaxi and select "Ingest Data"
 4) On the "Destination" tab on the Ingest wizard your Cluster and Database will already be selected. Choose to ingest to a new table called faredata_raw
-5) Fill out the source screen by following the screenshot below.
+5) Fill out the source screen by following the screenshot below. The Event System Properties selected are x-opt-enqueued-time and x-opt-offset.
 
     ![](../images/adxIngest03.png)
 
