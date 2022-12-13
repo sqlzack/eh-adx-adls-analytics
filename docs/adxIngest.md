@@ -22,7 +22,7 @@ This walkthrough is to demonstrate how to set up ingestion into an Azure Data Ex
 
     ![](../images/adxIngest04.png)
 
-7) Ensure all is well by reviewing the results.
+7) Ensure all is well by reviewing the results. If you get an error here follow the directions on [this page](./adxIngestError.md) to resolve.
 
     ![](../images/adxIngest05.png)
 
