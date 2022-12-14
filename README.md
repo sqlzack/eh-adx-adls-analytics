@@ -5,7 +5,12 @@ This project is meant to demonstrate how Azure Data Explorer (ADX) can be used t
 
 ## Simplified Architecture
 ![picture of base architecture](./images/architecture.png)
-
+### Component Overview
+1) __Azure Data Lake Gen 2 (Source)__ - Uploading the NYC Taxi Fare Source CSVs to the Azure Data Lake enables the Python event generator the ability to easily mount the storage to read the CSV and create the events. 
+2) __Spark Pool__ - There were two motivations to use a Spark pool to illustrate this use case. First, it is easy to deploy as part of a Synapse Deployment. Second, it can run vanilla Python code which allows us to simulate event generation. __In this example, the Spark pool is not used to perform normal Spark workloads.__ You could move the Python code used in the notebook to another deployment mechanism (Azure App Services, Functions, Kubernetes, VM etc) and get the same result. Ideally, you would use proper Spark AFTER the data has been procesed into partitioned Parquet files.
+3) __Azure Event Hubs__ - Event Hubs is used to integrate the NYC Taxi Fare data stream into other big data services. __In a production scenario, this would be the origin of your data.__
+4) __Azure Data Explorer__ - ADX provides both hot and cool path processing of the Event Hubs streaming data used in this example. To ease deployment, the Synapse ADX Pool is used. __Synapse ADX is still in Public Preview. If you need more flexibility in VM SKUs or more fulsome features use the standalone Azure Data Explorer Service.__
+5) __Azure Data Lake Gen 2 (Destination)__ - This is where the partitioned Parquet files will land via the External Table and Continuous Export features in Azure Data Explorer.
 
 ## Pre-requisites 
 1) A sandbox Azure Resource Group where the deploying user has Contributor access. [More Info Here](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview#role-assignments)
