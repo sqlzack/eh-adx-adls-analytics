@@ -1,4 +1,9 @@
-CREATE PROCEDURE p_retreiveEventHubBatch (@startValue int, @endValue INT) AS 
+/* Make sure you're using the nyctaxi database*/
+USE nyctaxi;
+GO
+/*This procedure returns the rows between a start and end value in JSON 
+format to be posted to Event Hubs batch REST endpoint.*/
+CREATE OR ALTER PROCEDURE p_retreiveEventHubBatch (@startValue int, @endValue INT) AS 
 ;WITH bodyRows AS
 (
 select  
