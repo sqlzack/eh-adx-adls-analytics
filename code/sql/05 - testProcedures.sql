@@ -11,3 +11,7 @@ exec p_createExternalTable @storageAccountName = '<storagaccountname>', @fareDat
 /* This procedure does not require any parameters but it does require the p_createExternalTable procedure to have run at least once to 
 successfully run*/
 EXEC p_getBatches
+
+/*You can use any startId and endId in the from the p_getBatches procedure in the below query*/
+/*I hard-coded the normal first batch in*/
+EXEC p_retreiveEventHubBatch @startValue =1, @endValue=3250
