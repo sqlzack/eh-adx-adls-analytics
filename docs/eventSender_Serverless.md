@@ -30,7 +30,7 @@ This is an alternative event sending methodology that doesn't require the provis
 8) Publish your Linked Service in preparation for next steps.
     
     ![](../images/addLinkedService03.png)    
-    
+
 
 #### Give Synapse the ability to send events to Event Hub
 1) Go to the Azure Portal resource for the Event Hubs instance created in deployment.
@@ -73,7 +73,9 @@ This is an alternative event sending methodology that doesn't require the provis
 
 #### Orchestrate Stored Procedures with Synapse Pipelines
 1) In Synape Studio, import a pipeline by following the steps below.
+    
     ![](../images/eventSender02.png)
+    
 2) Select the [pl_Serverless_EventSend.zip](../code/pipeline/pl_Serverless_EventSend.zip) file from this repository.
 3) When prompted to choose a linked service select ls_serverlesSQL and click Open Pipeline to import the pipelines from the zip.
    
