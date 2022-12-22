@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "eventHubNamespaceName": {
+      "value": "adxlamdaeh20221221a"
+    },
+    "synapseWorkspaceName": {
+      "value": "adx-lamda-syn-20221221"
+    },
+    "location": {
+      "value": "eastus2"
+    },
+    "storageAccountName": {
+      "value": "adxlamdasa20221221a"
+    },
+    "storageAccountContainerName": {
+      "value": "synapse"
+    },
+    "sqlAdministratorLogin": {
+      "value": "sqladminuser"
+    },
+    "synapseWorkspaceNameMRG": {
+      "value": "adx-lamda-standalone-mrg"
+    },
+    "dataExplorerResourceName": {
+      "value": "adxlamda20221221a"
+    }
+  }
+}

@@ -6,7 +6,7 @@ This walkthrough is to demonstrate how to set up a continuous export from a Azur
 #### __Set up the Continuous Export__
 1) Import the [01 - cleanTableCreate kql](../code/kusto/01%20-%20cleanTableCreate.kql) script from this repository into Synapse Studio by following the below steps.
 
-    ![](../images/adxExport01.png)
+    ![](../../images/kusto/adxExport01.png)
 
 2) Run each command against the nyctaxi database individually. Learn about the [stored function](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/create-function) and [update policy](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/updatepolicy) being applied.
 3) Repeat the process detailed in Step #1 to import the [02 - externalTableCreate](../code/kusto/02%20-%20externalTableCreate.kql) script.
@@ -26,4 +26,4 @@ This walkthrough is to demonstrate how to set up a continuous export from a Azur
 #### __Final Information__
 This will take nearly 24 hours and you should wind up with files in your storage container under the adxExport/external_faredata/year=yyyy/month=mm directory (example below). Since these files are partitioned they should be performant when querying or transforming downstream.
 
-![](../images/adxExport02.png)
+![](../../images/kusto/adxExport02.png)

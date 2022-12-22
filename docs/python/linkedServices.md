@@ -5,20 +5,20 @@ Open Synapse Studio in the Azure Portal and [create a Linked Service to Azure Ke
 ### Steps 
 1) To open Synapse Studio go to the Synapse Resource in the portal an click the button below.
 
-    ![](./../images/OpenSynStudio.png)
+    ![](./../../images/python/OpenSynStudio.png)
 
 2) On the left side of the screen you'll see an Icon representing the Manage blade of Synapse Studio Click it and find Linked Services. Click the New button
 
-    ![](./../images/addLinkedService.png)
+    ![](./../../images/python/addLinkedService.png)
 
 3) Search for Azure Key Vault and click Continue
 
-    ![](../images/addLinkedService01.png)
+    ![](../../images/python/addLinkedService01.png)
 
 4) Complete the screen below, test connection, and Create.
 
-    ![](../images/addLinkedService02.png)
+    ![](../../images/python/addLinkedService02.png)
 
 5) Publish your Changes
 
-    ![](../images/addLinkedService03.png)
+    ![](../../images/python/addLinkedService03.png)
