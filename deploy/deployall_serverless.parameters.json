@@ -3,28 +3,28 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "eventHubNamespaceName": {
-      "value": ""
+      "value": "adxlamdaeh20221227"
     },
     "synapseWorkspaceName": {
-      "value": ""
+      "value": "adx-lamda-syn-20221227"
     },
     "location": {
-      "value": ""
+      "value": "eastus2"
     },
     "storageAccountName": {
-      "value": ""
+      "value": "adxlamdasa20221227"
     },
     "storageAccountContainerName": {
-      "value": ""
+      "value": "synapse"
     },
     "sqlAdministratorLogin": {
-      "value": ""
+      "value": "sqladminuser"
     },
     "synapseWorkspaceNameMRG": {
-      "value": ""
+      "value": "adx-lamda-syn-20221227-mrg"
     },
     "dataExplorerResourceName": {
-      "value": ""
+      "value": "adxlamdaadx20221227"
     }
   }
 }

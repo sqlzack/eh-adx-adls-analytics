@@ -1,7 +1,7 @@
-# Azure Synapse Data Explorer - Simple Lamda Architecture
+# Azure Data Explorer - Simple Lamda Architecture
 
 ## Repository Summary
-This project is meant to demonstrate how Azure Data Explorer (ADX) can be used to continuously ingest a Azure Event Hubs stream to a raw table, a cleaned table, and finally to partitioned Parquet files on Azure Data Lake Storage. The idea behind this concept is this will give you a hot path in the ADX clean table and a cool path (and archive!) in the partitioned Parquet files.
+This Proof of Concept is meant to demonstrate how Azure Data Explorer (ADX) can be used to continuously ingest a Azure Event Hubs stream to a raw table, a cleaned table, and finally to partitioned Parquet files on Azure Data Lake Storage. The idea behind this concept is this will give you a hot path in the ADX clean table and a cool path (and archive!) in the partitioned Parquet files.
 
 ## Pre-requisites 
 1) A sandbox Azure Resource Group where the deploying user has Contributor access. [More Info Here](https://learn.microsoft.com/en-us/azure/role-based-access-control/overview#role-assignments)
@@ -39,7 +39,7 @@ _Components Unique to Deployment Option 2_
 
 
 
-## Steps to Create
+## Steps to Deploy
 
 __[Deployment Option 1: Serverless](./docs/serverless/README.md)__
 

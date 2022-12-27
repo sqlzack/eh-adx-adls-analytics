@@ -18,10 +18,14 @@ In this tutorial we'll give our Synapse Workspace Managed Identity and Azure Act
 
 5) Repeat the process in step 4 but choose "User, group, or Service Principal" instead of "Managed Identity" and add your Azure Active Directory User Account.
 6) Finish out the wizard to finalize the permissions.
-7) Open Synapse Studio and go to the Linked Service for the storage account
+7) Open Synapse Studio through the Azure Portal or by going to [https://web.azuresynapse.net](https://web.azuresynapse.net) and selecting your workspace.
+   
+    ![](./../../images/python/OpenSynStudio.png)
+
+8) In Synapse Studio, go to the Linked Service for the storage account
 
     ![](../../images/serverless/serverlessAddLinkedService01.png)
 
-8) Click on the "WorkspaceDefaultStorage" Linked Service and click Test Connection. If you get a "Connection Successful" message then you have correctly set up the permissions between your Storage Account and your Synapse Workspace.
+9)  Click on the "WorkspaceDefaultStorage" Linked Service and click Test Connection. If you get a "Connection Successful" message then you have correctly set up the permissions between your Storage Account and your Synapse Workspace.
 
     ![](../../images/python/storageAccountPermission04.png)
