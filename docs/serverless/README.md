@@ -5,6 +5,7 @@
    1) [Give Synapse permission to Storage Account](./docs/../serverless_storageAccountPerm.md)
    2) [Set up Serverless SQL Database and Linked Service](./serverless_LinkedService.md)
    3) [Give Synapse the ability to send events to Event Hub](./eventHubSetup.md)
+   4) [Add AllDatabasesAdmin Access to Azure Data Explorer](../kusto/allDatabasesAdmin.md)
 4) [Set up and test Serverless Event Sender](../serverless/eventSender_Serverless.md)
 5) [Set up and test Data Explorer ingestion.](../kusto/adxIngest_standalone.md)
 6) [Set up and test Data Explorer continuous partitioned export.](../kusto/adxExport_standalone.md)
