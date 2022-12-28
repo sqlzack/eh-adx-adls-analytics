@@ -36,7 +36,7 @@ This is an alternative event sending methodology that doesn't require the provis
     
     ![](../../images/python/eventSender02.png)
     
-2) Select the [pl_Serverless_EventSend.zip](../code/pipeline/pl_Serverless_EventSend.zip) file from this repository.
+2) Select the [pl_Serverless_EventSend.zip](../../code/serverless/../pipeline/pl_Serverless_EventSend.zip) file from this repository.
 3) When prompted to choose a linked service select ls_serverlesSQL and click Open Pipeline to import the pipelines from the zip.
    
    ![](../../images/serverless/serverlessIngest08.png)
