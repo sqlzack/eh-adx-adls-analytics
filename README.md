@@ -1,4 +1,4 @@
-# Azure Data Explorer - Simple Lamda Architecture
+# Azure Data Explorer - Stream Partitioned Data to Lake
 
 ## Repository Summary
 This Proof of Concept is meant to demonstrate how Azure Data Explorer (ADX) can be used to continuously ingest a Azure Event Hubs stream to a raw table, a cleaned table, and finally to partitioned Parquet files on Azure Data Lake Storage. The idea behind this concept is this will give you a hot path in the ADX clean table and a cool path (and archive!) in the partitioned Parquet files.

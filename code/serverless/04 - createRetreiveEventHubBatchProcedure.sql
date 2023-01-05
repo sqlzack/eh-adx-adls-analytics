@@ -21,7 +21,7 @@ select
         '\"tolls_amount\":\"'+TRY_CAST([ tolls_amount] AS VARCHAR(MAX))+'\",'+
         '\"total_amount\":\"'+TRY_CAST([ total_amount] AS VARCHAR(MAX))+'\"}'+
         '"}'
-from fileinprocess
+from fileInProcess
 WHERE rowkey BETWEEN @startValue AND @endValue
 )
 SELECT Body='['+STRING_AGG(bodyRow,',')+']'

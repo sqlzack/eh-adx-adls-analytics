@@ -13,9 +13,9 @@ DECLARE @dynamicSQL NVARCHAR(4000)
 
 SET @dynamicSQL = 
 '
-IF EXISTS (SELECT * FROM sys.external_tables where name = ''fileinprocess'')
+IF EXISTS (SELECT * FROM sys.external_tables where name = ''fileInProcess'')
 BEGIN
-    DROP EXTERNAL TABLE fileinprocess
+    DROP EXTERNAL TABLE fileInProcess
 END
 
 CREATE EXTERNAL TABLE fileInProcess 
@@ -26,7 +26,7 @@ DATA_SOURCE = src_externalTables,
 FILE_FORMAT  = filefmt_Parquet
 )
 AS
-SELECT row_number()OVER(order by [ pickup_datetime],[ hack_license],MEDALLION ) rowkey,*
+SELECT row_number()OVER(order by [ pickup_datetime],[ hack_license],medallion ) rowkey,*
 FROM
     OPENROWSET(
         BULK ''https://'+@storageAccountName+'.dfs.core.windows.net/'+@fareDataPath+''',

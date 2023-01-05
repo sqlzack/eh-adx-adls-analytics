@@ -6,22 +6,19 @@ GO
 */
 CREATE OR ALTER PROCEDURE p_getBatches AS 
 
-DECLARE @maxRowKey INT = (SELECT MAX(ROWKEY) FROM fileinprocess)
+DECLARE @endRowKey      INT, 
+        @startRowKey    INT
 
-;WITH baseQuery AS
-(
-SELECT  ISNULL(LAG(rowkey)OVER(order by rowkey)+1,1) startId
-        ,rowkey endId
-FROM fileinprocess
+SELECT   @endRowKey     = MAX(rowkey)
+        ,@startRowKey   = MAX(IIF(rowkey % 3250 = 1, rowkey, 0))
+FROM fileInProcess
+
+SELECT  startId    = rowkey - 3249
+        ,endId      = rowkey
+FROM fileInProcess
 WHERE rowkey % 3250 = 0
-),
-maxBatch AS 
-(
-SELECT max(endId) maxBatchId
-FROM baseQuery
-)
-SELECT *
-FROM baseQuery
 UNION ALL
-SELECT maxBatchId+1 startId, @maxRowKey endId
-FROM maxBatch
+SELECT @startRowKey, rowkey
+FROM fileInProcess
+WHERE rowkey = @endRowKey
+  AND rowkey % 3250 <> 0
